@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- postgres-deploy.yaml
+- postgres-service.yaml
+- redis-deploy.yaml
+- worker-app-deploy.yaml
+- redis-service.yaml
+- result-app-service.yaml
+- result-app-deploy.yaml
+- voting-app-deploy.yaml
+- voting-app-service.yaml
+
+# namespace: voter-app
+
+# commonLabels:
+#   app: Voters App
+#   env: Portfolio
+
+
+# patches:
+# - target:
+#     kind: Service
+#     name: my-service
+#   patch: |-
+#     - op: add
+#       path: /spec/type
+#       value: LoadBalancer
+
+# configMapGenerator:
+# - name: my-config
+#   literals:
+#   - MY_KEY=my-value
+#   - ANOTHER_KEY=another-value
